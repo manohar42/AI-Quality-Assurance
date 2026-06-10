@@ -96,7 +96,6 @@ qa-sentinel/
 │   └── past_bugs.md            ← Common bug patterns to always test
 ├── run.py                      ← Direct pipeline runner (no FastAPI needed)
 ├── test_connections.py         ← Verify Azure DevOps + OpenAI connections
-├── .env                        ← Your credentials (never commit this)
 ├── .env.example                ← Template with all required variables
 ├── requirements.txt
 └── README.md
