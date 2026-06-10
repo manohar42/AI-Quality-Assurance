@@ -25,37 +25,37 @@ Built for the **Agents League Hackathon 2026** — Reasoning Agents Track.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────┐
-│                         INPUT LAYER                                  │
-│                                                                      │
+│                         INPUT LAYER                                 │
+│                                                                     │
 │   [Azure DevOps REST API]          [Local Knowledge Base (.md)]     │
 │   User Stories + Bugs              Coding Standards + Test Patterns │
 └────────────────┬────────────────────────────┬───────────────────────┘
                  │                            │
                  ▼                            │
 ┌─────────────────────────────────────────────────────────────────────┐
-│                  LANGGRAPH MULTI-AGENT PIPELINE                      │
-│                                                                      │
+│                  LANGGRAPH MULTI-AGENT PIPELINE                     │
+│                                                                     │
 │  ┌──────────────────┐    ┌───────────────────┐   ┌───────────────┐  │
-│  │  Agent 1         │    │  Agent 2           │   │  Agent 3      │  │
-│  │  Ticket Reader   │───▶│  Test Case Writer  │──▶│  Script Gen   │  │
-│  │                  │    │  (uses KB context) │   │               │  │
+│  │  Agent 1         │    │  Agent 2          │   │  Agent 3      │  │
+│  │  Ticket Reader   │───▶│  Test Case Writer │──▶│  Script Gen  │  │
+│  │                  │    │  (uses KB context)│   │               │  │
 │  └──────────────────┘    └────────┬──────────┘   └──────┬────────┘  │
-│                                   │  ▲                   │           │
+│                                   │  ▲                  │           │
 │                           ┌───────▼──┴──────┐           │           │
-│                           │ Quality Checker  │           │           │
-│                           │ (loop ≤ 2 times) │           │           │
+│                           │ Quality Checker  │          │           │
+│                           │ (loop ≤ 2 times) │          │           │
 │                           └─────────────────┘           │           │
 └─────────────────────────────────────────────────────────┼───────────┘
-                                                           │
+                                                           │ 
 ┌──────────────────────────────────────────────────────────▼──────────┐
-│                          OUTPUT LAYER                                │
-│                                                                      │
+│                          OUTPUT LAYER                               │
+│                                                                     │
 │          [Playwright .py Test Scripts]    [Local output/ folder]    │
 └─────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────┐
 │                      LLM + TRIGGER LAYER                            │
-│                                                                      │
+│                                                                     │
 │    OpenAI gpt-4o-mini (Phase 1)      FastAPI /run endpoint          │
 └─────────────────────────────────────────────────────────────────────┘
 ```
